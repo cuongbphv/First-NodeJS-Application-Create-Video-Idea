@@ -1,0 +1,69 @@
+<style>
+    /* Bordered form */
+
+    .frmLogin {
+        border: 3px solid #f1f1f1;
+        background: #E9ECEF;
+        border-radius: 20px;
+        box-shadow: 5px 10px #888888;
+    }
+
+    /* Full-width inputs */
+
+    .frmLogin input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+
+    .btn-style {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    /* Add a hover effect for buttons */
+
+    .btn-style:hover {
+        opacity: 0.8;
+    }
+
+    /* Add padding to containers */
+
+    .container {
+        padding: 16px;
+    }
+</style>
+
+<div class="container frmLogin">
+    <form action="/users/changepsw/{{user.id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="oldPassword">
+            <b>Old Password</b>
+        </label>
+        <input type="password" name="oldPassword">
+
+        <label for="newPassword">
+            <b>New Password</b>
+        </label>
+        <input type="password" name="newPassword">
+
+        <label for="reNewPassword">
+            <b>Confirm New Password</b>
+        </label>
+        <input type="password" name="reNewPassword">
+
+        <button class="btn-style" type="submit">Change Password</button>
+        <button class="btn-style" style="background: #f44336;" type="reset">Cancel</button>
+    </form>
+</div>

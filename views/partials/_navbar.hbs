@@ -1,0 +1,77 @@
+<nav class="navbar navbar-inverse navbar-expand-sm navbar-dark">
+    <div class="navbar-header d-flex col">
+        <a class="navbar-brand" href="/">
+            <i class="fa fa-cube"></i>Ent.
+            <b>Cê</b>
+        </a>
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
+            <span class="navbar-toggler-icon"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+        <ul class="nav navbar-nav navbar-right ml-auto">
+            <li class="nav-item active">
+                <a href="/" class="nav-link">
+                    <i class="fa fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link">
+                    <i class="fa fa-bell"></i>
+                    <span>About</span>
+                </a>
+            </li>
+
+            {{#if user}}
+            <li class="nav-item dropdown">
+                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">
+                    <img src="http://pluspng.com/img-png/png-entrepreneur-avatar-icon-document-entrepreneur-man-business-693.png" class="avatar"
+                        alt="Avatar"> {{user.name}}
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/ideas" class="dropdown-item">
+                            <i class="fa fa-sticky-note-o"></i> Ideas</a>
+                    </li>
+                    <li>
+                        <a href="/ideas/add" class="dropdown-item">
+                            <i class="fa fa-edit"></i> Add Idea</a>
+                    </li>
+                    <li class="divider dropdown-divider"></li>
+                    <li>
+                        <a href="/users/profile" class="dropdown-item">
+                            <i class="fa fa-user-o"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="/users/changepsw" class="dropdown-item">
+                            <i class="fa fa-key"></i> Change Password</a>
+                    </li>
+                    <li>
+                        <a href="/users/logout" class="dropdown-item">
+                            <i class="material-icons">&#xE8AC;</i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+            {{else}}
+            <li class="nav-item">
+                <a href="/users/login" class="nav-link">
+                    <i class="fa fa-sign-in"></i>
+                    <span>Login</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/users/register" class="nav-link">
+                    <i class="fa fa-key"></i>
+                    <span>Register</span>
+                </a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>

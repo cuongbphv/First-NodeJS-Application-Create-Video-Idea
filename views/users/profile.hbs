@@ -1,0 +1,64 @@
+<style>
+    /* Bordered form */
+
+    .frmLogin {
+        border: 3px solid #f1f1f1;
+        background: #E9ECEF;
+        border-radius: 20px;
+        box-shadow: 5px 10px #888888;
+    }
+
+    /* Full-width inputs */
+
+    .frmLogin input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+
+    .btn-style {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    /* Add a hover effect for buttons */
+
+    .btn-style:hover {
+        opacity: 0.8;
+    }
+
+    /* Add padding to containers */
+
+    .container {
+        padding: 16px;
+    }
+</style>
+
+<div class="container frmLogin">
+    <form id="changeProfile" action="/users/profile/{{user.id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="fname">
+            <b>Full Name</b>
+        </label>
+        <input id="inputFname" type="text" name="fname" value="{{user.name}}" disabled>
+
+        <label for="email">
+            <b>E-Mail</b>
+        </label>
+        <input type="text" name="email" value="{{user.email}}" disabled>
+
+        <button id="enableInput" class="btn-style" type="button">Edit Profile</button>
+    </form>
+    <button id="cancelInput" class="btn-style" style="background: #f44336;">Cancel</button>
+</div>

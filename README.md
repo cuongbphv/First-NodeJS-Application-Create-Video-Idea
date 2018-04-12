@@ -6,7 +6,7 @@
 
 - Use mLab as Database-as-a-Service to save my MongoDB
 
-- USe express-handlebars to build views, user interface
+- Use express-handlebars to build views, user interface
 
 - Use passport local and express-session to authenticate register or login into application
 
